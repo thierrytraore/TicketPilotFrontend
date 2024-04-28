@@ -9,4 +9,10 @@ export class TicketService extends BaseService<TicketModel> {
   constructor() {
     super('tickets');
   }
+
+  statistics() {
+    const url = `${this.baseUrl}/statistics`;
+    return this.http.get<any>(url);
+  }
+
 }
