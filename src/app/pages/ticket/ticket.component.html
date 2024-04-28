@@ -4,5 +4,74 @@
     suivre leur progression et communiquer facilement pour garantir une résolution rapide.</p>
 </div>
 
-
-
+<div class="table-responsive">
+  <table class="table table-bordered table-striped table-hover">
+    <thead>
+    <tr>
+      <th class="text-uppercase" scope="col">#</th>
+      <th class="text-uppercase" scope="col">Titre</th>
+      <th class="text-uppercase" scope="col">Description</th>
+      <th class="text-uppercase" scope="col">Statut</th>
+      <th class="text-uppercase" scope="col">Tags</th>
+      <th class="text-uppercase" scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      @for (item of ticketRows; track item.id; let idx = $index) {
+        <tr>
+          <th scope="row">{{ idx + 1 }}</th>
+          <td><small>{{ item.label }}</small></td>
+          <td><small>{{ item.description }}</small></td>
+          <td>
+            @switch (item.status) {
+              @case ("NEW") {
+                <small>Nouveau Ticket</small>
+              }
+              @case ("ASSIGNED") {
+                <small>Ticket Assigné</small>
+              }
+              @case ("PENDING") {
+                <small>Ticket en Attente</small>
+              }
+              @case ("RESOLVED") {
+                <small>Ticket Résolu</small>
+              }
+              @case ("REJECTED") {
+                <small>Ticket Rejeté</small>
+              }
+            }
+          </td>
+          <td>
+            @for (tag of item.tags; track tag.id) {
+              @switch (tag.label) {
+                @case ("Urgent") {
+                  <span class="badge rounded-pill text-bg-danger m-1"> {{ tag.label }}</span>
+                }
+                @case ("Assistance utilisateur") {
+                  <span class="badge rounded-pill text-bg-info m-1"> {{ tag.label }}</span>
+                }
+                @case ("Sécurité informatique") {
+                  <span class="badge rounded-pill text-bg-warning m-1"> {{ tag.label }}</span>
+                }
+                @case ("Performances") {
+                  <span class="badge rounded-pill text-bg-secondary m-1"> {{ tag.label }}</span>
+                }
+                @case ("Demandes générales") {
+                  <span class="badge rounded-pill text-bg-success m-1"> {{ tag.label }}</span>
+                }
+                @case ("Problèmes logiciels") {
+                  <span class="badge rounded-pill text-bg-dark m-1"> {{ tag.label }}</span>
+                }
+                @case ("Problèmes matériels") {
+                  <span class="badge rounded-pill text-bg-primary m-1"> {{ tag.label }}</span>
+                }
+              }
+            }
+          </td>
+          <td>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
