@@ -4,6 +4,7 @@ import { PersonModel } from "../../models/person.model";
 import { PersonService } from "../../services/person.service";
 import { Router } from "@angular/router";
 import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
+import { LocalStorageService } from "../../utilities/local-storage.service";
 
 @Component({
   selector: 'app-register',
@@ -19,6 +20,7 @@ export class RegisterComponent {
   currentYear: number = new Date().getFullYear();
   personService = inject(PersonService);
   router = inject(Router);
+  localStorage = inject(LocalStorageService);
 
   registerForm = new FormGroup({
     lastName: new FormControl('Kouakou'),
@@ -34,7 +36,7 @@ export class RegisterComponent {
     this.personService.register(this.registerForm.value as PersonModel)
       .subscribe({
         next: (result) => {
-          console.log(result);
+          this.localStorage.setItem('loggedUser', JSON.stringify(result));
           this.router.navigateByUrl('/administration').then(r => r);
         },
         error: (e) => console.error(e)

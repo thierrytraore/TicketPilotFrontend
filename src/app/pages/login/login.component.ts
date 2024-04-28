@@ -18,15 +18,14 @@ import { Router } from "@angular/router";
 export class LoginComponent implements OnInit, OnDestroy {
 
   currentYear: number = new Date().getFullYear();
+  router = inject(Router);
+  personService = inject(PersonService);
+  localStorage = inject(LocalStorageService);
 
   loginForm = new FormGroup({
     email: new FormControl('thierry.traore@exnihilo.com'),
     password: new FormControl('thierry.traore@exnihilo.com'),
   });
-
-  router = inject(Router);
-  personService = inject(PersonService);
-  localStorage = inject(LocalStorageService);
 
   constructor(private renderer: Renderer2, @Inject(DOCUMENT) private document: Document) {
   }
