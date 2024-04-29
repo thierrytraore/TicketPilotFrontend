@@ -11,14 +11,12 @@
     <h1 class="h3 mb-3 fw-normal">Connexion</h1>
 
     <div class="form-floating">
-      <input class="form-control" formControlName="email" id="floatingInput" placeholder="name@example.com"
-             type="email">
+      <input class="form-control" formControlName="email" id="floatingInput" placeholder="name@example.com" type="email">
       <label for="floatingInput">Adresse e-mail</label>
     </div>
 
     <div class="form-floating">
-      <input class="form-control" formControlName="password" id="floatingPassword" placeholder="Password"
-             type="password">
+      <input class="form-control" formControlName="password" id="floatingPassword" placeholder="Password" type="password">
       <label for="floatingPassword">Mot de passe</label>
     </div>
 
@@ -30,6 +28,6 @@
     <button [disabled]="!loginForm.valid" class="btn btn-primary w-100 py-2 mb-3" type="submit">Se connecter</button>
     <small >Pas de compte ? <a href="/authentication/register">Inscrivez-vous</a> maintenant</small>
 
-    <p class="mt-5 mb-3 text-body-secondary">&copy; {{ currentYear }}</p>
+    <p class="mt-5 mb-3 text-body-secondary">&copy; 2024</p>
   </form>
 </main>

@@ -11,14 +11,12 @@
     <h1 class="h3 mb-3 fw-normal">Inscription</h1>
 
     <div class="form-floating">
-      <input class="form-control" formControlName="lastName" id="floatingLastName"
-             placeholder="Nom" style="border-top-left-radius: 5px;border-top-right-radius: 5px;" type="text">
+      <input class="form-control" formControlName="lastName" id="floatingLastName" placeholder="Nom" style="border-top-left-radius: 5px;border-top-right-radius: 5px;" type="text">
       <label for="floatingLastName">Nom</label>
     </div>
 
     <div class="form-floating">
-      <input class="form-control" formControlName="firstName" id="floatingFirstName" placeholder="Prénom(s)"
-             type="text">
+      <input class="form-control" formControlName="firstName" id="floatingFirstName" placeholder="Prénom(s)" type="text">
       <label for="floatingFirstName">Prénom(s)</label>
     </div>
 
@@ -28,8 +26,7 @@
     </div>
 
     <div class="form-floating">
-      <input class="form-control" formControlName="password" id="floatingPassword" placeholder="Password"
-             style="margin-bottom: -1px; border-radius: 0;" type="password">
+      <input class="form-control" formControlName="password" id="floatingPassword" placeholder="Password" style="margin-bottom: -1px; border-radius: 0;" type="password">
       <label for="floatingPassword">Mot de passe</label>
     </div>
 
@@ -41,6 +38,6 @@
     <button [disabled]="!registerForm.valid" class="btn btn-primary w-100 py-2 mb-3" type="submit">S'inscrire</button>
     <small >Déjà inscrit ? <a href="/authentication/login">Connectez-vous</a> maintenant</small>
 
-    <p class="mt-5 mb-3 text-body-secondary">&copy; {{ currentYear }}</p>
+    <p class="mt-5 mb-3 text-body-secondary">&copy; 2024</p>
   </form>
 </main>

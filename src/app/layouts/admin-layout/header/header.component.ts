@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LocalStorageService } from "../../../utilities/local-storage.service";
 
 @Component({
   selector: 'app-header',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+
+  localStorage = inject(LocalStorageService);
+
+  logout() {
+    this.localStorage.removeItem('loggedUser');
+  }
 
 }

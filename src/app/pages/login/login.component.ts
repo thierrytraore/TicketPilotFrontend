@@ -17,7 +17,6 @@ import { Router } from "@angular/router";
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-  currentYear: number = new Date().getFullYear();
   router = inject(Router);
   personService = inject(PersonService);
   localStorage = inject(LocalStorageService);

@@ -17,7 +17,6 @@ import { LocalStorageService } from "../../utilities/local-storage.service";
 })
 export class RegisterComponent {
 
-  currentYear: number = new Date().getFullYear();
   personService = inject(PersonService);
   router = inject(Router);
   localStorage = inject(LocalStorageService);
